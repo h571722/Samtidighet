@@ -21,12 +21,17 @@ public class Buffer {
      * @param item the new item
      * @throws InterruptedException 
      */
-    public void add(Integer item) throws InterruptedException {
+    public void add(Integer item) {
         while (true) {
             if(buffer.size() < SIZE) {
             	buffer.add(item);
             }else {
-            	buffer.wait(50);
+            	try {
+					buffer.wait(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
             
             return;    
