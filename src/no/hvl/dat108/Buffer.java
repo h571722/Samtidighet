@@ -29,11 +29,10 @@ public class Buffer {
             	try {
 					buffer.wait(50);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
+					System.out.println(e);
 					e.printStackTrace();
 				}
             }
-            
             return;    
         }
     }
