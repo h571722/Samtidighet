@@ -19,13 +19,17 @@ public class Buffer {
      * Add a new item to the buffer. If the buffer is full, wait.
      *
      * @param item the new item
+     * @throws InterruptedException 
      */
-    public void add(Integer item) {
+    public void add(Integer item) throws InterruptedException {
         while (true) {
-            int test = 0;
-            buffer.add(item);
-            // TODO
-            return;
+            if(buffer.size() < SIZE) {
+            	buffer.add(item);
+            }else {
+            	buffer.wait(50);
+            }
+            
+            return;    
         }
     }
 
