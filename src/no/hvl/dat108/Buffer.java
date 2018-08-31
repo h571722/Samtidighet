@@ -27,7 +27,7 @@ public class Buffer {
             	buffer.add(item);
             }else {
             	try {
-					buffer.wait(50);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
 					System.out.println(e);
 					e.printStackTrace();
@@ -43,9 +43,19 @@ public class Buffer {
      * @return next item
      */
     public Integer remove() {
+    	Integer back = null;
         while (true) {
             // TODO
-            Integer back = buffer.removeFirst();
+        	if (buffer.size() > 0) {
+        		back = buffer.removeFirst();
+        	} else {
+        		try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+        	}
             // TODO
             return back;
         }
