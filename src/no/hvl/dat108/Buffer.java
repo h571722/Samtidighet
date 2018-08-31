@@ -45,9 +45,18 @@ public class Buffer {
     public Integer remove() {
         while (true) {
             // TODO
+        	if(buffer.size() < 1) {
             Integer back = buffer.removeFirst();
-            // TODO
             return back;
+        	}else {
+        		try {
+					buffer.wait(50);
+				} catch (InterruptedException e) {
+					System.out.println(e);
+					e.printStackTrace();
+				}
+        	}
+            // TODO
         }
     }
 
