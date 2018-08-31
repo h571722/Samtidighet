@@ -17,6 +17,7 @@ public class Point {
     public Point() {
         x = 0.;
         y = 0.;
+        int tester = 3;
     }
 
     /**
