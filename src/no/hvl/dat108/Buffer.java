@@ -27,9 +27,9 @@ public class Buffer {
             	buffer.add(item);
             }else {
             	try {
-					buffer.wait(50);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
-					System.out.println(e);
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
             }
@@ -50,9 +50,9 @@ public class Buffer {
             return back;
         	}else {
         		try {
-					buffer.wait(50);
+					Thread.sleep(50);
 				} catch (InterruptedException e) {
-					System.out.println(e);
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
         	}

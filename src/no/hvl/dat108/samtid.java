@@ -7,9 +7,10 @@ public class samtid {
 		Consumer c1 = new Consumer(b);
 		Producer p1 = new Producer(b);
 		
+		
 		p1.run();
 		c1.run();
 
+		
 	}
-
 }
