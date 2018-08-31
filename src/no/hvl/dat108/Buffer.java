@@ -43,7 +43,7 @@ public class Buffer {
      * @return next item
      */
     public Integer remove() {
-    	Integer back = null;
+    	Integer back = 0;
         while (true) {
             // TODO
         	if (buffer.size() > 0) {
